@@ -4,6 +4,7 @@ const Annoucement =()=>{
     return(
         <div>
             <p>Annoucement</p>
+            
         </div>
     )
 }

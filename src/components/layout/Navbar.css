@@ -1,0 +1,11 @@
+.positionnav{
+    /* width:auto;s */
+   float:right;
+   justify-items: center;
+   justify-content: center;
+   
+}
+.positionnavs{
+    display:flex;
+    flex-direction:column;
+}
