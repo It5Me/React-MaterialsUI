@@ -3,13 +3,13 @@ import "./Navbar.css"
 import {Button} from '@material-ui/core';
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import Avatar from '@material-ui/core/Avatar';
 import Popper from "@material-ui/core/Popper";
 import Grow from "@material-ui/core/Grow";
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 const Navbar =() =>{
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -53,16 +53,22 @@ const Navbar =() =>{
     prevOpen.current = open;
   }, [open]); 
     return(
+        <div className="all-navbar">
+        <AppBar position="static">
+        {/* <Toolbar> */}
         <div>
-        <div>
+        
         <Button className="positionnav"
           ref={anchorRef}
           aria-controls={open ? "menu-list-grow" : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
         >
-         <ArrowDropDownIcon/>
+         <Avatar  claasName = "avatar "   />
+         <ArrowDropDownIcon/>        {/*icon*/}
+         
         </Button>
+        
         <Popper
           open={open}
           anchorEl={anchorRef.current}
@@ -75,10 +81,12 @@ const Navbar =() =>{
               {...TransitionProps}
               style={{
                 transformOrigin:
-                placement === "bottom" ? "center top" : "center bottom"
+                placement === "bottom" ? "center top" : "center "
+                
               }}
             >
-              <ClickAwayListener onClickAway={handleClose}>
+              {/* <ClickAwayListener onClickAway={handleClose}> */}
+                <div className="color">
                 <MenuList
                   autoFocusItem={open}
                   id="menu-list-grow"
@@ -89,13 +97,18 @@ const Navbar =() =>{
                   <MenuItem  className="positionnavs" onClick={handleClose}>Calendar</MenuItem>
                   <MenuItem  className="positionnavs" onClick={handleClose}>Groups</MenuItem>
                   <MenuItem  className="positionnavs" onClick={handleClose}>Friends</MenuItem>
-                  <MenuItem  className="positionnavs" onClick={handleClose} >Log out</MenuItem>
+                  <MenuItem  className=" positionnavs " onClick={handleClose} >
+                  <i className=" sigout-icon fa fa-sign-out" aria-hidden="true"><span className="logout">Log out </span></i>
+                  </MenuItem>
                 </MenuList>
-              </ClickAwayListener>
+                  </div>
+              {/* </ClickAwayListener> */}
             </Grow>
           )}
         </Popper>
       </div>
+      {/* </Toolbar> */}
+      </AppBar>
             
         </div>
     )

@@ -6,7 +6,6 @@ import CropIcon from '@material-ui/icons/Crop';
 const Home =()=>{
     return(
         <div>
-        
             <CropIcon/>
             <Course/>
             <Annoucement/>

@@ -1,11 +1,24 @@
 .positionnav{
-    /* width:auto;s */
    float:right;
-   justify-items: center;
-   justify-content: center;
+   display:inline-block;
    
 }
 .positionnavs{
     display:flex;
     flex-direction:column;
+}
+.sigout-icon{
+    padding-right: 10px;
+}
+.avatar{
+    /* color: red;
+    background-color: blue; */
+}
+.logout{
+    padding-left: 2px;
+    padding-right: 5px
+}
+.color{
+    color:rgb(8, 8, 8);
+    background-color: rgb(125, 125, 131)
 }
